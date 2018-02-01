@@ -6,8 +6,14 @@ html {
 .sitecontainer {
   width: 960px;
   height:auto;
+  margin: 0;
   padding-left: 9rem;
 }
+
+
+
+
+/*header section*/
 
 .container .header {
   background-color: black;
@@ -16,10 +22,10 @@ html {
 
 .header {
   display: flex;
-
   padding-top: 0.66rem;
   padding-bottom: 0.66rem;
   padding-left: 9rem;
+  align-items: center;
 }
 
 .header img {
@@ -32,12 +38,12 @@ html {
   display: flex;
   background-image: url(https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/moto.jpeg);
   height: 25rem;
-
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .newarrival {
+  position: relative;
   height: 10rem;
   width: 20rem;
   background-color: black;
@@ -61,33 +67,132 @@ margin-top: 9rem;
 margin-left: 9rem;
 }
 
+
+/*Navigation Bar*/
+
 .nav {
-  display: flex;
   background-color: firebrick;
   color: white;
-  font-weight: bold;
-  padding-left: 9rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-
 }
 
-.nav span {
-
+.nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
 }
+
+.mobile-nav li {
+  display: none;
+}
+
+/*Products Section*/
 
 .products {
-  display: inline-flex;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+
+
 }
 
-.item {
-
-  height: 15rem;
-  width: 15rem;
-  border: 4px solid black;
-}
 
 .item img {
   height: 9rem;
-  width: auto;
+  padding: 2em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid black;
+  max-width: 15rem;
+  width: 15rem;
+
+}
+
+.description {
+  display: block;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: .5rem;
+}
+
+/*location and hours*/
+
+.info {
+  display: inline-block;
+  width: 30%;
+
+
+}
+
+.info .title {
+
+  padding: 1rem 2rem;
+  background: black;
+  color: white;
+  margin-top: 3rem;
+
+}
+
+/*footer*/
+
+.footer {
+  padding: 5rem 0;
+  margin-top: 4rem;
+  background-color: black;
+  color: white;
+  padding-left: 1rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .item {
+    width: 47%;
+  }
+
+  .products .glasses {
+    display: none;
+  }
+
+  .nav li {
+    display: none;
+  }
+
+  .mobile-nav li {
+    display: block;
+    text-align: center;
+
+  }
+
+  .info {
+    width: 35%;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+
+.banner {
+  height: 15rem;
+}
+
+.products, .info {
+  flex-wrap: wrap;
+}
+
+.products {
+  width: 90%;
+}
+
+.products .watch {
+  display: none;
+}
+
+.info {
+  width: 90%;
+  margin: 0.5rem auto;
+}
+
+.footer {
+  text-align: center;
+}
 }
